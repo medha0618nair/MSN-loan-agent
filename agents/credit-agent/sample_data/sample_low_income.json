@@ -1,0 +1,55 @@
+{
+  "application_id": "APP-LOWINCOME-001",
+  "evidence": {
+    "intake": {
+      "applicant_name": "Priya Singh",
+      "email": "priya@example.com",
+      "phone": "9765432100",
+      "loan_amount": 200000,
+      "loan_purpose": "Home",
+      "pan": "ABCDE1234F"
+    },
+    "kyc": {
+      "pan_number": "ABCDE1234F",
+      "name_extracted": "PRIYA SINGH",
+      "kyc_confidence": 0.80,
+      "doc_type": "pan"
+    },
+    "face": {
+      "face_verified": true,
+      "match_confidence": 0.85,
+      "liveness_score": 0.90
+    },
+    "payslip": {
+      "net_pay_payslip": 22000,
+      "gross_pay_payslip": 28000,
+      "monthly_income": 22000,
+      "income_confidence": 0.75,
+      "employment_status": "employed"
+    },
+    "bank": {
+      "median_salary": 20500,
+      "avg_salary": 21000,
+      "months_salary_detected": 4,
+      "payroll_consistency": 0.72,
+      "salary_share_of_credits": 0.60,
+      "inflow_std": 1500.0,
+      "confidence": 0.78,
+      "bank_salary_detected": true
+    },
+    "fraud": {
+      "fraud_score": 0.12,
+      "reasons": [],
+      "suspicious_keywords": []
+    }
+  },
+  "loan_request": {
+    "loan_amount": 200000,
+    "tenure_months": 36,
+    "monthly_emi_estimate": 6200
+  },
+  "app_metadata": {
+    "submission_ts": "2025-12-12T11:00:00Z",
+    "source": "web"
+  }
+}

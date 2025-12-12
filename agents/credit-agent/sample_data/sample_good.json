@@ -1,0 +1,56 @@
+{
+  "application_id": "APP-GOOD-001",
+  "evidence": {
+    "intake": {
+      "applicant_name": "Rajesh Kumar",
+      "email": "rajesh@example.com",
+      "phone": "9876543210",
+      "loan_amount": 150000,
+      "loan_purpose": "Personal",
+      "pan": "DIJPN7537R"
+    },
+    "kyc": {
+      "pan_number": "DIJPN7537R",
+      "aadhaar_number": "123456789012",
+      "name_extracted": "RAJESH KUMAR",
+      "kyc_confidence": 0.95,
+      "doc_type": "pan"
+    },
+    "face": {
+      "face_verified": true,
+      "match_confidence": 0.94,
+      "liveness_score": 0.98
+    },
+    "payslip": {
+      "net_pay_payslip": 48000,
+      "gross_pay_payslip": 65000,
+      "monthly_income": 48000,
+      "income_confidence": 0.88,
+      "employment_status": "employed"
+    },
+    "bank": {
+      "median_salary": 47500,
+      "avg_salary": 47800,
+      "months_salary_detected": 8,
+      "payroll_consistency": 0.88,
+      "salary_share_of_credits": 0.85,
+      "inflow_std": 1200.5,
+      "confidence": 0.92,
+      "bank_salary_detected": true
+    },
+    "fraud": {
+      "fraud_score": 0.08,
+      "reasons": [],
+      "suspicious_keywords": []
+    }
+  },
+  "loan_request": {
+    "loan_amount": 150000,
+    "tenure_months": 24,
+    "monthly_emi_estimate": 6750
+  },
+  "app_metadata": {
+    "submission_ts": "2025-12-12T10:00:00Z",
+    "source": "web"
+  }
+}
