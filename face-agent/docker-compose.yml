@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  face-verification-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: face-verification-agent
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+      - ./embeddings.db:/app/embeddings.db
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - face-network
+    restart: unless-stopped
+
+  # Optional: Database viewer (Adminer)
+  adminer:
+    image: adminer
+    container_name: face-db-viewer
+    ports:
+      - "8080:8080"
+    networks:
+      - face-network
+    depends_on:
+      - face-verification-agent
+
+networks:
+  face-network:
+    driver: bridge

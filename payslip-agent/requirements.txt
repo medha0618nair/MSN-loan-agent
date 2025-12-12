@@ -1,0 +1,21 @@
+# Core Dependencies
+fastapi>=0.95.0
+uvicorn[standard]>=0.21.0
+pydantic>=2.0
+python-multipart>=0.0.5
+
+# OCR & Image Processing
+easyocr>=1.6.0
+Pillow>=9.0.0
+PyPDF2>=3.0.0
+
+# Multi-Agent & LLM Integration
+langchain>=0.0.200
+
+# Testing (optional)
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+
+# Optional for enhanced features
+onnxruntime>=1.16.0  # For advanced embeddings if needed
