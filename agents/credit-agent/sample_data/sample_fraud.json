@@ -1,0 +1,63 @@
+{
+  "application_id": "APP-FRAUD-001",
+  "evidence": {
+    "intake": {
+      "applicant_name": "Unknown Person",
+      "email": "unknown@example.com",
+      "phone": "9999999999",
+      "loan_amount": 300000,
+      "loan_purpose": "Unclear",
+      "pan": "FAKE1234567"
+    },
+    "kyc": {
+      "pan_number": "FAKE1234567",
+      "name_extracted": "UNKNOWN PERSON",
+      "kyc_confidence": 0.45,
+      "doc_type": "pan"
+    },
+    "face": {
+      "face_verified": false,
+      "match_confidence": 0.35,
+      "liveness_score": 0.40
+    },
+    "payslip": {
+      "net_pay_payslip": null,
+      "gross_pay_payslip": null,
+      "monthly_income": null,
+      "income_confidence": 0.0,
+      "employment_status": "unemployed"
+    },
+    "bank": {
+      "median_salary": null,
+      "avg_salary": null,
+      "months_salary_detected": 0,
+      "payroll_consistency": 0.0,
+      "salary_share_of_credits": 0.05,
+      "inflow_std": 5000.0,
+      "confidence": 0.2,
+      "bank_salary_detected": false
+    },
+    "fraud": {
+      "fraud_score": 0.78,
+      "reasons": [
+        "doc_mismatch",
+        "face_mismatch",
+        "multiple_applications",
+        "high_loan_to_income"
+      ],
+      "suspicious_keywords": [
+        "fake_document",
+        "identity_theft_flag"
+      ]
+    }
+  },
+  "loan_request": {
+    "loan_amount": 300000,
+    "tenure_months": 12,
+    "monthly_emi_estimate": 25000
+  },
+  "app_metadata": {
+    "submission_ts": "2025-12-12T12:00:00Z",
+    "source": "web"
+  }
+}

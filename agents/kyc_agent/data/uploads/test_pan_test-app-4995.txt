@@ -1,0 +1,6 @@
+﻿INCOME TAX DEPARTMENT
+PAN CARD
+PAN Number: ABCDE1234F
+Name: JOHN DOE
+Date of Birth: 01/01/1985
+Date of Issue: 15/03/2010

@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-12-12T15:21:47.114133+00:00",
+  "application_id": "APP-LOWINCOME-001",
+  "request_summary": {
+    "loan_amount": 200000,
+    "tenure_months": 36
+  },
+  "response": {
+    "application_id": "APP-LOWINCOME-001",
+    "pd_score": 0.0004,
+    "risk_tier": "LOW",
+    "recommended_action": "APPROVE",
+    "max_eligible_loan": 553500,
+    "recommended_tenure_months": 36,
+    "monthly_emi_recommendation": 5555.56,
+    "explanation": [
+      "median_income_used",
+      "low_fraud_score",
+      "face_verified",
+      "kyc_verified"
+    ],
+    "feature_importances": {
+      "income": 0.35,
+      "payroll_consistency": 0.19463182537306808,
+      "fraud_score": 0.10934923021116832,
+      "face_confidence": 0.1,
+      "kyc_confidence": 0.1,
+      "dti": 0.26777966899370853,
+      "tenure": 0.02,
+      "other": 0.0
+    },
+    "confidence": 0.87,
+    "agent_version": "score-v1",
+    "ts": "2025-12-12T15:21:47.114133+00:00"
+  }
+}

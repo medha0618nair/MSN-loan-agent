@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intake + KYC Test Harness</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f8f9fb; color: #222; }
+    h1 { margin-bottom: 4px; }
+    h2 { margin: 20px 0 8px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    label { display: block; font-weight: 600; margin-top: 8px; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    button { margin-top: 12px; padding: 10px 14px; border: none; border-radius: 4px; background: #0d6efd; color: #fff; cursor: pointer; }
+    button:disabled { background: #aaa; cursor: not-allowed; }
+    pre { background: #0b1724; color: #c7f2ff; padding: 12px; border-radius: 6px; overflow: auto; max-height: 320px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .row > div { flex: 1; min-width: 240px; }
+    small { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Intake + KYC Test Harness</h1>
+  <p>Call the existing APIs to sanity-check OCR and slot matching. No face detection is used.</p>
+
+  <div class="card">
+    <h2>Service URLs</h2>
+    <div class="row">
+      <div>
+        <label for="intakeUrl">Intake URL</label>
+        <input id="intakeUrl" value="http://localhost:8001" />
+      </div>
+      <div>
+        <label for="kycUrl">KYC URL</label>
+        <input id="kycUrl" value="http://localhost:8002" />
+      </div>
+    </div>
+    <button type="button" id="btnHealth" onclick="pingHealth()">Health Check Both</button>
+  </div>
+
+  <div class="card">
+    <h2>Conversation (collect user data)</h2>
+    <div class="row">
+      <div>
+        <label for="appId">Application ID</label>
+        <input id="appId" value="test-app-123" />
+      </div>
+      <div>
+        <label for="convId">Conversation ID</label>
+        <input id="convId" value="conv-001" />
+      </div>
+    </div>
+    <label for="userMessage">User message</label>
+    <textarea id="userMessage" rows="3">My name is John Doe, email john@example.com, phone 9876543210, I need 500000 for home renovation, I earn 75000 per month, my PAN is ABCDE1234F</textarea>
+    <button type="button" id="btnConverse" onclick="callConverse()">Send /chat/converse</button>
+  </div>
+
+  <div class="card">
+    <h2>Upload + OCR (PAN/Aadhaar/Payslip)</h2>
+    <div class="row">
+      <div>
+        <label for="docType">Document type</label>
+        <select id="docType">
+          <option value="pan">pan</option>
+          <option value="aadhaar">aadhaar</option>
+          <option value="payslip">payslip</option>
+          <option value="bank_statement">bank_statement</option>
+        </select>
+      </div>
+      <div>
+        <label for="filePath">File path (accessible to server)</label>
+        <input id="filePath" placeholder="C:\\path\\to\\pan.jpg" />
+        <small>Place file where the backend can read it (same host).</small>
+      </div>
+      <div>
+        <label for="evidenceId">Evidence ID (optional)</label>
+        <input id="evidenceId" placeholder="pan-ev-001" />
+      </div>
+    </div>
+    <button type="button" id="btnUpload" onclick="callUpload()">Send /chat/upload (triggers KYC)</button>
+  </div>
+
+  <div class="card">
+    <h2>Results</h2>
+    <pre id="output">Awaiting calls...</pre>
+  </div>
+
+  <script>
+    const out = (data) => {
+      const pre = document.getElementById('output');
+      pre.textContent = typeof data === 'string' ? data : JSON.stringify(data, null, 2);
+    };
+
+    const setLoading = (btnId, isLoading, label) => {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      btn.disabled = isLoading;
+      if (label) btn.textContent = label;
+    };
+
+    const fetchJson = async (url, options = {}) => {
+      const resp = await fetch(url, options);
+      const contentType = resp.headers.get('content-type') || '';
+      const payload = contentType.includes('application/json') ? await resp.json() : await resp.text();
+      if (!resp.ok) {
+        throw new Error(`HTTP ${resp.status} ${resp.statusText}: ${typeof payload === 'string' ? payload : JSON.stringify(payload)}`);
+      }
+      return payload;
+    };
+
+    async function pingHealth() {
+      const intakeUrl = document.getElementById('intakeUrl').value.trim();
+      const kycUrl = document.getElementById('kycUrl').value.trim();
+      setLoading('btnHealth', true, 'Pinging...');
+      try {
+        const [i, k] = await Promise.all([
+          fetchJson(intakeUrl + '/health'),
+          fetchJson(kycUrl + '/health')
+        ]);
+        out({ intake: i, kyc: k });
+      } catch (err) {
+        out({ error: err.toString() });
+      } finally {
+        setLoading('btnHealth', false, 'Health Check Both');
+      }
+    }
+
+    async function callConverse() {
+      const intakeUrl = document.getElementById('intakeUrl').value.trim();
+      const appId = document.getElementById('appId').value.trim();
+      const convId = document.getElementById('convId').value.trim();
+      const userMessage = document.getElementById('userMessage').value.trim();
+      setLoading('btnConverse', true, 'Calling...');
+      try {
+        const json = await fetchJson(intakeUrl + '/chat/converse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            application_id: appId,
+            conversation_id: convId,
+            user_message: userMessage,
+            context: {}
+          })
+        });
+        out(json);
+      } catch (err) {
+        out({ error: err.toString() });
+      } finally {
+        setLoading('btnConverse', false, 'Send /chat/converse');
+      }
+    }
+
+    async function callUpload() {
+      const intakeUrl = document.getElementById('intakeUrl').value.trim();
+      const appId = document.getElementById('appId').value.trim();
+      const convId = document.getElementById('convId').value.trim();
+      const docType = document.getElementById('docType').value;
+      const filePath = document.getElementById('filePath').value.trim();
+      const evidenceId = document.getElementById('evidenceId').value.trim();
+
+      if (!filePath) {
+        out({ error: 'Please provide a file path accessible to the server' });
+        return;
+      }
+
+      setLoading('btnUpload', true, 'Uploading...');
+      try {
+        const json = await fetchJson(intakeUrl + '/chat/upload', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            application_id: appId,
+            conversation_id: convId,
+            doc_type: docType,
+            file_path: filePath,
+            evidence_id: evidenceId || undefined
+          })
+        });
+        out(json);
+      } catch (err) {
+        out({ error: err.toString() });
+      } finally {
+        setLoading('btnUpload', false, 'Send /chat/upload (triggers KYC)');
+      }
+    }
+  </script>
+</body>
+</html>
