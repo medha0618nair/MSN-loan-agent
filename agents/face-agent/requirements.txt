@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+opencv-python
+pillow
+langchain
+langchain-community
+python-dotenv
+requests

@@ -1,0 +1,126 @@
+{
+  "application_id": "APP-4272A18A8D4C",
+  "created_at": "2025-12-13T03:25:13.293094",
+  "last_updated": "2025-12-13T03:25:58.595042",
+  "current_stage": "kyc_file",
+  "collected_data": {
+    "loan_type": "home",
+    "full_name": "med",
+    "date_of_birth": "2001-12-12",
+    "phone": "1111222233",
+    "email": "med@gmail.com",
+    "pan": "AAAAA9999A",
+    "employment_type": "student",
+    "monthly_income": 20000.0,
+    "loan_amount": 10000.0,
+    "tenure_months": 7
+  },
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-13T03:25:13.293991"
+    },
+    {
+      "role": "user",
+      "content": "home ",
+      "timestamp": "2025-12-13T03:25:17.552309"
+    },
+    {
+      "role": "bot",
+      "content": "What is your full name?",
+      "timestamp": "2025-12-13T03:25:17.554653"
+    },
+    {
+      "role": "user",
+      "content": "med",
+      "timestamp": "2025-12-13T03:25:20.979115"
+    },
+    {
+      "role": "bot",
+      "content": "What is your date of birth? (YYYY-MM-DD)",
+      "timestamp": "2025-12-13T03:25:20.980834"
+    },
+    {
+      "role": "user",
+      "content": "2001-12-12",
+      "timestamp": "2025-12-13T03:25:25.741747"
+    },
+    {
+      "role": "bot",
+      "content": "What is your phone number? (10 digits)",
+      "timestamp": "2025-12-13T03:25:25.743569"
+    },
+    {
+      "role": "user",
+      "content": "1111222233",
+      "timestamp": "2025-12-13T03:25:30.976696"
+    },
+    {
+      "role": "bot",
+      "content": "What is your email address?",
+      "timestamp": "2025-12-13T03:25:30.977238"
+    },
+    {
+      "role": "user",
+      "content": "med@gmail.com",
+      "timestamp": "2025-12-13T03:25:37.521980"
+    },
+    {
+      "role": "bot",
+      "content": "What is your PAN? (Format: AAAAA9999A)",
+      "timestamp": "2025-12-13T03:25:37.522415"
+    },
+    {
+      "role": "user",
+      "content": "AAAAA9999A",
+      "timestamp": "2025-12-13T03:25:41.951614"
+    },
+    {
+      "role": "bot",
+      "content": "What is your employment type? (salaried/self-employed/student)",
+      "timestamp": "2025-12-13T03:25:41.954483"
+    },
+    {
+      "role": "user",
+      "content": "student",
+      "timestamp": "2025-12-13T03:25:46.271457"
+    },
+    {
+      "role": "bot",
+      "content": "What is your monthly income (\u20b9)?",
+      "timestamp": "2025-12-13T03:25:46.274112"
+    },
+    {
+      "role": "user",
+      "content": "20000",
+      "timestamp": "2025-12-13T03:25:49.526438"
+    },
+    {
+      "role": "bot",
+      "content": "What loan amount do you need (\u20b9)?",
+      "timestamp": "2025-12-13T03:25:49.530417"
+    },
+    {
+      "role": "user",
+      "content": "10000",
+      "timestamp": "2025-12-13T03:25:55.687610"
+    },
+    {
+      "role": "bot",
+      "content": "What loan duration do you want (months)?",
+      "timestamp": "2025-12-13T03:25:55.689395"
+    },
+    {
+      "role": "user",
+      "content": "7",
+      "timestamp": "2025-12-13T03:25:58.593162"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your KYC document (Aadhaar/PAN/Passport)",
+      "timestamp": "2025-12-13T03:25:58.595020"
+    }
+  ],
+  "completed": false
+}

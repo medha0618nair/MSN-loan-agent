@@ -1,0 +1,190 @@
+{
+  "application_id": "APP-D4FBBB87D59D",
+  "created_at": "2025-12-12T20:16:03.446535",
+  "last_updated": "2025-12-12T20:21:52.799844",
+  "current_stage": "bank_statement_file",
+  "collected_data": {},
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-12T20:16:03.447351"
+    },
+    {
+      "role": "user",
+      "content": "home",
+      "timestamp": "2025-12-12T20:16:09.108895"
+    },
+    {
+      "role": "bot",
+      "content": "What is your full name?",
+      "timestamp": "2025-12-12T20:16:09.110757"
+    },
+    {
+      "role": "user",
+      "content": "medha",
+      "timestamp": "2025-12-12T20:16:11.347114"
+    },
+    {
+      "role": "bot",
+      "content": "What is your date of birth? (YYYY-MM-DD)",
+      "timestamp": "2025-12-12T20:16:11.350254"
+    },
+    {
+      "role": "user",
+      "content": "2005-06-18",
+      "timestamp": "2025-12-12T20:16:23.426908"
+    },
+    {
+      "role": "bot",
+      "content": "What is your phone number? (10 digits)",
+      "timestamp": "2025-12-12T20:16:23.427330"
+    },
+    {
+      "role": "user",
+      "content": "1234567890",
+      "timestamp": "2025-12-12T20:16:30.742002"
+    },
+    {
+      "role": "bot",
+      "content": "What is your email address?",
+      "timestamp": "2025-12-12T20:16:30.743272"
+    },
+    {
+      "role": "user",
+      "content": "medha@gmail.com",
+      "timestamp": "2025-12-12T20:16:37.291919"
+    },
+    {
+      "role": "bot",
+      "content": "What is your PAN? (Format: AAAAA9999A)",
+      "timestamp": "2025-12-12T20:16:37.293590"
+    },
+    {
+      "role": "user",
+      "content": "AAAD23445A",
+      "timestamp": "2025-12-12T20:16:51.737066"
+    },
+    {
+      "role": "bot",
+      "content": "\u274c Invalid PAN format. Must be like: AAAAA9999A\n\nWhat is your PAN? (Format: AAAAA9999A)",
+      "timestamp": "2025-12-12T20:16:51.737796"
+    },
+    {
+      "role": "user",
+      "content": "AAAAA9999A",
+      "timestamp": "2025-12-12T20:17:55.975890"
+    },
+    {
+      "role": "bot",
+      "content": "What is your employment type? (salaried/self-employed/student)",
+      "timestamp": "2025-12-12T20:17:55.977134"
+    },
+    {
+      "role": "user",
+      "content": "salaried",
+      "timestamp": "2025-12-12T20:18:02.865685"
+    },
+    {
+      "role": "bot",
+      "content": "What is your current employer name?",
+      "timestamp": "2025-12-12T20:18:02.867743"
+    },
+    {
+      "role": "user",
+      "content": "apple",
+      "timestamp": "2025-12-12T20:18:05.581476"
+    },
+    {
+      "role": "bot",
+      "content": "What is your monthly income (\u20b9)?",
+      "timestamp": "2025-12-12T20:18:05.583406"
+    },
+    {
+      "role": "user",
+      "content": "4600000",
+      "timestamp": "2025-12-12T20:18:13.125251"
+    },
+    {
+      "role": "bot",
+      "content": "What loan amount do you need (\u20b9)?",
+      "timestamp": "2025-12-12T20:18:13.126439"
+    },
+    {
+      "role": "user",
+      "content": "30000",
+      "timestamp": "2025-12-12T20:18:17.724010"
+    },
+    {
+      "role": "bot",
+      "content": "What loan duration do you want (months)?",
+      "timestamp": "2025-12-12T20:18:17.726340"
+    },
+    {
+      "role": "user",
+      "content": "7",
+      "timestamp": "2025-12-12T20:18:20.699962"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your KYC document (Aadhaar/PAN/Passport)",
+      "timestamp": "2025-12-12T20:18:20.701709"
+    },
+    {
+      "role": "user",
+      "content": "./images/nithinPAN.png",
+      "timestamp": "2025-12-12T20:19:30.065522"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your selfie for face verification",
+      "timestamp": "2025-12-12T20:19:30.066266"
+    },
+    {
+      "role": "user",
+      "content": "./images/nithin3.jpg",
+      "timestamp": "2025-12-12T20:20:00.504934"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your bank statement (or type 'skip')",
+      "timestamp": "2025-12-12T20:20:00.505912"
+    },
+    {
+      "role": "user",
+      "content": "skip",
+      "timestamp": "2025-12-12T20:20:10.656579"
+    },
+    {
+      "role": "user",
+      "content": "./payslip/payslip_nithin_j.txt",
+      "timestamp": "2025-12-12T20:21:24.499744"
+    },
+    {
+      "role": "user",
+      "content": "./payslip/payslip_nithin_j.txt",
+      "timestamp": "2025-12-12T20:21:29.495352"
+    },
+    {
+      "role": "user",
+      "content": "what am i supposed to enter",
+      "timestamp": "2025-12-12T20:21:39.890221"
+    },
+    {
+      "role": "bot",
+      "content": "\u274c Please provide a valid file path (e.g., ./images/file.jpg) or type 'skip'\n\nPlease upload your bank statement (or type 'skip')",
+      "timestamp": "2025-12-12T20:21:39.891940"
+    },
+    {
+      "role": "user",
+      "content": "'skip'",
+      "timestamp": "2025-12-12T20:21:52.799386"
+    },
+    {
+      "role": "bot",
+      "content": "\u274c Please provide a valid file path (e.g., ./images/file.jpg) or type 'skip'\n\nPlease upload your bank statement (or type 'skip')",
+      "timestamp": "2025-12-12T20:21:52.799841"
+    }
+  ],
+  "completed": false
+}

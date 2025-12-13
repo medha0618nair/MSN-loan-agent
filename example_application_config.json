@@ -1,0 +1,40 @@
+{
+    "application_id": "APP-20240115-001",
+    "applicant_info": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9876543210",
+        "date_of_birth": "1990-05-15",
+        "address": "123 Main Street, Apartment 4B",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "pincode": "560001",
+        "employment_status": "salaried",
+        "annual_income": 800000,
+        "current_employer": "TechCorp Inc",
+        "designation": "Senior Software Engineer",
+        "years_at_current_employer": 5,
+        "cibil_score": 750,
+        "pan_number": "AAAPD5055K",
+        "aadhaar_number": "1234567890123456",
+        "loan_amount_requested": 500000,
+        "loan_tenure_months": 60,
+        "loan_purpose": "Home Purchase"
+    },
+    "documents": {
+        "aadhaar": "/path/to/documents/aadhaar.pdf",
+        "pan": "/path/to/documents/pan.pdf",
+        "passport": "/path/to/documents/passport.pdf",
+        "selfie": "/path/to/documents/selfie.jpg",
+        "recent_payslip": "/path/to/documents/payslip_january.pdf",
+        "bank_statement": "/path/to/documents/bank_statement_3months.pdf",
+        "employment_letter": "/path/to/documents/employment_letter.pdf"
+    },
+    "custom_fields": {
+        "preferred_branch": "Bangalore",
+        "referral_code": "TECH2024",
+        "marital_status": "Married",
+        "number_of_dependents": 2
+    },
+    "priority": "normal"
+}

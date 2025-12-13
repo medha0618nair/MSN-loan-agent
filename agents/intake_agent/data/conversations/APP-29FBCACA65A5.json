@@ -1,0 +1,25 @@
+{
+  "application_id": "APP-29FBCACA65A5",
+  "created_at": "2025-12-13T03:59:45.873963",
+  "last_updated": "2025-12-13T03:59:48.818604",
+  "current_stage": "loan_type",
+  "collected_data": {},
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-13T03:59:45.881105"
+    },
+    {
+      "role": "user",
+      "content": "hom",
+      "timestamp": "2025-12-13T03:59:48.817339"
+    },
+    {
+      "role": "bot",
+      "content": "\u274c Invalid loan type. Please choose from: personal, home, auto, education\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-13T03:59:48.818586"
+    }
+  ],
+  "completed": false
+}

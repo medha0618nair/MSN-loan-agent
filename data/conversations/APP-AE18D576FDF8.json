@@ -1,0 +1,209 @@
+{
+  "application_id": "APP-AE18D576FDF8",
+  "created_at": "2025-12-12T20:34:39.395426",
+  "last_updated": "2025-12-12T20:34:43.592777",
+  "current_stage": "bank_statement_file",
+  "collected_data": {
+    "loan_type": "home",
+    "full_name": "Nithin Nair",
+    "date_of_birth": "1995-05-15",
+    "phone": "9876543210",
+    "email": "nithin.nair@email.com",
+    "pan": "AAAAN1234K",
+    "employment_type": "salaried",
+    "employer_name": "Microsoft India",
+    "designation": "Senior Software Engineer",
+    "years_at_job": 5.0,
+    "monthly_income": 500000.0,
+    "loan_amount": 3000000.0,
+    "tenure_months": 60,
+    "kyc_file": "./images/nithinPAN.png",
+    "selfie_file": "./images/nithin3.jpg",
+    "payslip_file": "./payslip/payslip_nithin_j.txt",
+    "bank_statement_file": null
+  },
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-12T20:34:39.395966"
+    },
+    {
+      "role": "user",
+      "content": "home",
+      "timestamp": "2025-12-12T20:34:39.397996"
+    },
+    {
+      "role": "bot",
+      "content": "What is your full name?",
+      "timestamp": "2025-12-12T20:34:39.398166"
+    },
+    {
+      "role": "user",
+      "content": "Nithin Nair",
+      "timestamp": "2025-12-12T20:34:39.399501"
+    },
+    {
+      "role": "bot",
+      "content": "What is your date of birth? (YYYY-MM-DD)",
+      "timestamp": "2025-12-12T20:34:39.399698"
+    },
+    {
+      "role": "user",
+      "content": "1995-05-15",
+      "timestamp": "2025-12-12T20:34:39.401270"
+    },
+    {
+      "role": "bot",
+      "content": "What is your phone number? (10 digits)",
+      "timestamp": "2025-12-12T20:34:39.401464"
+    },
+    {
+      "role": "user",
+      "content": "9876543210",
+      "timestamp": "2025-12-12T20:34:39.402714"
+    },
+    {
+      "role": "bot",
+      "content": "What is your email address?",
+      "timestamp": "2025-12-12T20:34:39.402884"
+    },
+    {
+      "role": "user",
+      "content": "nithin.nair@email.com",
+      "timestamp": "2025-12-12T20:34:39.404189"
+    },
+    {
+      "role": "bot",
+      "content": "What is your PAN? (Format: AAAAA9999A)",
+      "timestamp": "2025-12-12T20:34:39.404400"
+    },
+    {
+      "role": "user",
+      "content": "AAAAN1234K",
+      "timestamp": "2025-12-12T20:34:39.405634"
+    },
+    {
+      "role": "bot",
+      "content": "What is your employment type? (salaried/self-employed/student)",
+      "timestamp": "2025-12-12T20:34:39.405835"
+    },
+    {
+      "role": "user",
+      "content": "salaried",
+      "timestamp": "2025-12-12T20:34:39.406956"
+    },
+    {
+      "role": "bot",
+      "content": "What is your current employer name?",
+      "timestamp": "2025-12-12T20:34:39.407154"
+    },
+    {
+      "role": "user",
+      "content": "Microsoft India",
+      "timestamp": "2025-12-12T20:34:39.408220"
+    },
+    {
+      "role": "bot",
+      "content": "What is your job designation?",
+      "timestamp": "2025-12-12T20:34:39.408719"
+    },
+    {
+      "role": "user",
+      "content": "Senior Software Engineer",
+      "timestamp": "2025-12-12T20:34:39.409833"
+    },
+    {
+      "role": "bot",
+      "content": "How many years have you been in this job?",
+      "timestamp": "2025-12-12T20:34:39.410055"
+    },
+    {
+      "role": "user",
+      "content": "5",
+      "timestamp": "2025-12-12T20:34:39.411253"
+    },
+    {
+      "role": "bot",
+      "content": "What is your monthly income (\u20b9)?",
+      "timestamp": "2025-12-12T20:34:39.411511"
+    },
+    {
+      "role": "user",
+      "content": "500000",
+      "timestamp": "2025-12-12T20:34:39.412585"
+    },
+    {
+      "role": "bot",
+      "content": "What loan amount do you need (\u20b9)?",
+      "timestamp": "2025-12-12T20:34:39.412836"
+    },
+    {
+      "role": "user",
+      "content": "3000000",
+      "timestamp": "2025-12-12T20:34:39.413917"
+    },
+    {
+      "role": "bot",
+      "content": "What loan duration do you want (months)?",
+      "timestamp": "2025-12-12T20:34:39.414177"
+    },
+    {
+      "role": "user",
+      "content": "60",
+      "timestamp": "2025-12-12T20:34:39.415283"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your KYC document (Aadhaar/PAN/Passport)",
+      "timestamp": "2025-12-12T20:34:39.415568"
+    },
+    {
+      "role": "user",
+      "content": "./images/nithinPAN.png",
+      "timestamp": "2025-12-12T20:34:39.416670"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your selfie for face verification",
+      "timestamp": "2025-12-12T20:34:39.416980"
+    },
+    {
+      "role": "user",
+      "content": "./images/nithin3.jpg",
+      "timestamp": "2025-12-12T20:34:39.418074"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your payslip (or type 'skip')",
+      "timestamp": "2025-12-12T20:34:39.418385"
+    },
+    {
+      "role": "user",
+      "content": "./payslip/payslip_nithin_j.txt",
+      "timestamp": "2025-12-12T20:34:39.419639"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your bank statement (or type 'skip')",
+      "timestamp": "2025-12-12T20:34:39.420005"
+    },
+    {
+      "role": "user",
+      "content": "skip",
+      "timestamp": "2025-12-12T20:34:39.421173"
+    },
+    {
+      "role": "bot",
+      "content": "\u2705 Application data collected! Submitting to orchestrator...",
+      "timestamp": "2025-12-12T20:34:39.421518"
+    },
+    {
+      "role": "bot",
+      "content": "\u2705 Application submitted for verification.\nJob ID: JOB-C6A7F66202FF\n\nVerification in progress...",
+      "timestamp": "2025-12-12T20:34:43.592735"
+    }
+  ],
+  "completed": true,
+  "completed_at": "2025-12-12T20:34:39.421350"
+}

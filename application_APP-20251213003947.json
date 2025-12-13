@@ -1,0 +1,15 @@
+{
+  "application_id": "APP-20251213003947",
+  "applicant_name": "blah blah",
+  "status": "APPROVED",
+  "credit_score": 676,
+  "loan_amount": 300000.0,
+  "annual_income": 4500000.0,
+  "dti_ratio": 6.666666666666667,
+  "reason": "Application approved based on credit profile",
+  "approved_amount": 300000.0,
+  "interest_rate": 7.5,
+  "monthly_emi": 26027.22506562183,
+  "total_interest": 12326.700787461945,
+  "total_repayment": 312326.70078746194
+}

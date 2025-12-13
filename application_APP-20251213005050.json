@@ -1,0 +1,15 @@
+{
+  "application_id": "APP-20251213005050",
+  "applicant_name": "nithin",
+  "status": "APPROVED",
+  "credit_score": 679,
+  "loan_amount": 30000.0,
+  "annual_income": 2500000.0,
+  "dti_ratio": 1.7999999999999998,
+  "reason": "Application approved based on credit profile",
+  "approved_amount": 30000.0,
+  "interest_rate": 7.5,
+  "monthly_emi": 3856.2353674369497,
+  "total_interest": 849.8829394955974,
+  "total_repayment": 30849.882939495597
+}

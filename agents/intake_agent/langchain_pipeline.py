@@ -69,7 +69,7 @@ class IntakePipeline:
         self.llm = ChatGroq(
             temperature=0.7,
             model=model_name,
-            groq_api_key=groq_api_key
+            api_key=groq_api_key
         )
         logger.info(f"ChatGroq initialized with model '{model_name}' (API key set: {bool(groq_api_key)})")
         

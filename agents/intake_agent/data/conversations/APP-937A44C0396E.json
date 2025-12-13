@@ -1,0 +1,159 @@
+{
+  "application_id": "APP-937A44C0396E",
+  "created_at": "2025-12-13T01:01:56.289314",
+  "last_updated": "2025-12-13T01:03:06.325347",
+  "current_stage": "kyc_file",
+  "collected_data": {
+    "loan_type": "home",
+    "full_name": "med",
+    "date_of_birth": "2004-12-12",
+    "phone": "1234567890",
+    "email": "nithin@gmail.com",
+    "pan": "AAAAA9999A",
+    "employment_type": "salaried",
+    "employer_name": "nithin",
+    "designation": "sde",
+    "years_at_job": 5.0,
+    "monthly_income": 30000.0,
+    "loan_amount": 39900.0,
+    "tenure_months": 8
+  },
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-13T01:01:56.291032"
+    },
+    {
+      "role": "user",
+      "content": "home ",
+      "timestamp": "2025-12-13T01:02:03.075966"
+    },
+    {
+      "role": "bot",
+      "content": "What is your full name?",
+      "timestamp": "2025-12-13T01:02:03.078367"
+    },
+    {
+      "role": "user",
+      "content": "med",
+      "timestamp": "2025-12-13T01:02:06.126184"
+    },
+    {
+      "role": "bot",
+      "content": "What is your date of birth? (YYYY-MM-DD)",
+      "timestamp": "2025-12-13T01:02:06.134896"
+    },
+    {
+      "role": "user",
+      "content": "2004-12-12",
+      "timestamp": "2025-12-13T01:02:14.513216"
+    },
+    {
+      "role": "bot",
+      "content": "What is your phone number? (10 digits)",
+      "timestamp": "2025-12-13T01:02:14.515602"
+    },
+    {
+      "role": "user",
+      "content": "1234567890",
+      "timestamp": "2025-12-13T01:02:22.310005"
+    },
+    {
+      "role": "bot",
+      "content": "What is your email address?",
+      "timestamp": "2025-12-13T01:02:22.312552"
+    },
+    {
+      "role": "user",
+      "content": "nithin@gmail.com ",
+      "timestamp": "2025-12-13T01:02:30.469983"
+    },
+    {
+      "role": "bot",
+      "content": "What is your PAN? (Format: AAAAA9999A)",
+      "timestamp": "2025-12-13T01:02:30.471278"
+    },
+    {
+      "role": "user",
+      "content": "AAAAA9999A",
+      "timestamp": "2025-12-13T01:02:36.961620"
+    },
+    {
+      "role": "bot",
+      "content": "What is your employment type? (salaried/self-employed/student)",
+      "timestamp": "2025-12-13T01:02:36.963292"
+    },
+    {
+      "role": "user",
+      "content": "salaried ",
+      "timestamp": "2025-12-13T01:02:42.087755"
+    },
+    {
+      "role": "bot",
+      "content": "What is your current employer name?",
+      "timestamp": "2025-12-13T01:02:42.090850"
+    },
+    {
+      "role": "user",
+      "content": "nithin ",
+      "timestamp": "2025-12-13T01:02:46.489201"
+    },
+    {
+      "role": "bot",
+      "content": "What is your job designation?",
+      "timestamp": "2025-12-13T01:02:46.492722"
+    },
+    {
+      "role": "user",
+      "content": "sde",
+      "timestamp": "2025-12-13T01:02:51.127897"
+    },
+    {
+      "role": "bot",
+      "content": "How many years have you been in this job?",
+      "timestamp": "2025-12-13T01:02:51.129280"
+    },
+    {
+      "role": "user",
+      "content": "5",
+      "timestamp": "2025-12-13T01:02:53.861931"
+    },
+    {
+      "role": "bot",
+      "content": "What is your monthly income (\u20b9)?",
+      "timestamp": "2025-12-13T01:02:53.863859"
+    },
+    {
+      "role": "user",
+      "content": "30000",
+      "timestamp": "2025-12-13T01:02:58.112928"
+    },
+    {
+      "role": "bot",
+      "content": "What loan amount do you need (\u20b9)?",
+      "timestamp": "2025-12-13T01:02:58.115790"
+    },
+    {
+      "role": "user",
+      "content": "39900",
+      "timestamp": "2025-12-13T01:03:02.482364"
+    },
+    {
+      "role": "bot",
+      "content": "What loan duration do you want (months)?",
+      "timestamp": "2025-12-13T01:03:02.484268"
+    },
+    {
+      "role": "user",
+      "content": "8",
+      "timestamp": "2025-12-13T01:03:06.322477"
+    },
+    {
+      "role": "bot",
+      "content": "Please upload your KYC document (Aadhaar/PAN/Passport)",
+      "timestamp": "2025-12-13T01:03:06.325322"
+    }
+  ],
+  "completed": false
+}

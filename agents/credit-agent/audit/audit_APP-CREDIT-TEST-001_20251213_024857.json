@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-12-12T21:18:57.676639+00:00",
+  "application_id": "APP-CREDIT-TEST-001",
+  "request_summary": {
+    "loan_amount": 3000000,
+    "tenure_months": 60
+  },
+  "response": {
+    "application_id": "APP-CREDIT-TEST-001",
+    "pd_score": 0.003,
+    "risk_tier": "LOW",
+    "recommended_action": "APPROVE",
+    "max_eligible_loan": 1255530,
+    "recommended_tenure_months": 48,
+    "monthly_emi_recommendation": 62500.0,
+    "explanation": [
+      "median_income_used",
+      "low_fraud_score",
+      "face_verified",
+      "kyc_verified",
+      "stable_payroll",
+      "high_dti"
+    ],
+    "feature_importances": {
+      "income": 0.35,
+      "payroll_consistency": 0.19463182537306806,
+      "fraud_score": 0.10934923021116832,
+      "face_confidence": 0.1,
+      "kyc_confidence": 0.1,
+      "dti": 0.26777966899370853,
+      "tenure": 0.02,
+      "other": 0.0
+    },
+    "confidence": 0.95,
+    "agent_version": "score-v1",
+    "ts": "2025-12-12T21:18:57.675706+00:00"
+  }
+}

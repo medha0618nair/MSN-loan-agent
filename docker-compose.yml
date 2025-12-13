@@ -1,50 +1,178 @@
 version: '3.8'
 
 services:
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  intake_agent:
+  # Intake Agent
+  intake:
     build:
       context: ./agents/intake_agent
       dockerfile: Dockerfile
+    container_name: intake-agent
     ports:
-      - "8001:8001"
+      - "8001:8000"
     environment:
-      - GROQ_API_KEY=${GROQ_API_KEY}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - DOCS_PATH=/app/data/docs
+      - PYTHONUNBUFFERED=1
     volumes:
-      - ./data/docs:/app/data/docs
-      - ./data/uploads:/app/data/uploads
-    depends_on:
-      redis:
-        condition: service_healthy
-    restart: unless-stopped
+      - ./agents/intake_agent/data:/app/data
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
-  kyc_agent:
+  # KYC Agent
+  kyc:
     build:
       context: ./agents/kyc_agent
       dockerfile: Dockerfile
+    container_name: kyc-agent
     ports:
-      - "8002:8002"
+      - "8002:8000"
     environment:
-      - UPLOAD_PATH=/app/data/uploads
-      - CROPS_PATH=/app/data/crops
+      - PYTHONUNBUFFERED=1
     volumes:
-      - ./data/uploads:/app/data/uploads
-      - ./data/crops:/app/data/crops
-    restart: unless-stopped
+      - ./agents/kyc_agent/data:/app/data
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
-volumes:
-  redis_data:
+  # Face Agent
+  face:
+    build:
+      context: ./agents/face-agent
+      dockerfile: Dockerfile
+    container_name: face-agent
+    ports:
+      - "8003:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/face-agent/data:/app/data
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Payslip Agent
+  payslip:
+    build:
+      context: ./agents/payslip-agent
+      dockerfile: Dockerfile
+    container_name: payslip-agent
+    ports:
+      - "8004:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/payslip-agent/data:/app/data
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Bank Agent
+  bank:
+    build:
+      context: ./agents/bank-agent
+      dockerfile: Dockerfile
+    container_name: bank-agent
+    ports:
+      - "8005:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/bank-agent/data:/app/data
+      - ./bank-statement:/app/bank-statement
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Credit Agent
+  credit:
+    build:
+      context: ./agents/credit-agent
+      dockerfile: Dockerfile
+    container_name: credit-agent
+    ports:
+      - "8006:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./agents/credit-agent/data:/app/data
+      - ./agents/credit-agent/audit:/app/audit
+      - ./agents/credit-agent/models:/app/models
+    networks:
+      - loan-agent-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Orchestrator Agent
+  orchestrator:
+    build:
+      context: ./orchestrator_agent
+      dockerfile: Dockerfile
+    container_name: orchestrator-agent
+    ports:
+      - "9000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Service discovery via Docker DNS
+      - INTAKE_URL=http://intake:8000
+      - KYC_URL=http://kyc:8000
+      - FACE_URL=http://face:8000
+      - PAYSLIP_URL=http://payslip:8000
+      - BANK_URL=http://bank:8000
+      - CREDIT_URL=http://credit:8000
+    volumes:
+      - ./orchestrator_agent/audit:/app/audit
+      - ./orchestrator_agent/jobs:/app/jobs
+    networks:
+      - loan-agent-network
+    depends_on:
+      intake:
+        condition: service_healthy
+      kyc:
+        condition: service_healthy
+      face:
+        condition: service_healthy
+      payslip:
+        condition: service_healthy
+      bank:
+        condition: service_healthy
+      credit:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  loan-agent-network:
+    driver: bridge
+    name: loan-agent-network

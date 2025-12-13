@@ -1,0 +1,15 @@
+{
+  "application_id": "APP-3A0B7859EF78",
+  "created_at": "2025-12-13T03:18:24.675691",
+  "last_updated": "2025-12-13T03:18:24.683211",
+  "current_stage": "loan_type",
+  "collected_data": {},
+  "messages": [
+    {
+      "role": "bot",
+      "content": "Welcome to loan verification!\n\nWhat type of loan do you need? (personal/home/auto/education)",
+      "timestamp": "2025-12-13T03:18:24.683174"
+    }
+  ],
+  "completed": false
+}

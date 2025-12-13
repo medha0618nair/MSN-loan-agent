@@ -1,0 +1,62 @@
+{
+  "job_id": "JOB-C6A7F66202FF",
+  "application_id": "APP-AE18D576FDF8",
+  "status": "COMPLETED",
+  "started_at": "2025-12-12T20:34:39.442719",
+  "stages": {
+    "kyc": {
+      "error": "kyc failed after 2 retries",
+      "status": "FAILED"
+    },
+    "face": {
+      "error": "face failed after 2 retries",
+      "status": "FAILED"
+    },
+    "payslip": {
+      "error": "payslip failed after 2 retries",
+      "status": "FAILED"
+    },
+    "bank": {
+      "error": "bank failed after 2 retries",
+      "status": "FAILED"
+    },
+    "credit": {
+      "error": "credit failed after 2 retries",
+      "status": "FAILED"
+    }
+  },
+  "final_decision": {
+    "job_id": "JOB-C6A7F66202FF",
+    "application_id": "APP-AE18D576FDF8",
+    "status": "PENDING",
+    "credit_score": 0,
+    "reason": "",
+    "approved_amount": null,
+    "interest_rate": null,
+    "monthly_emi": null,
+    "tenure_months": 60,
+    "evidence": {
+      "kyc": {
+        "error": "kyc failed after 2 retries",
+        "status": "FAILED"
+      },
+      "face": {
+        "error": "face failed after 2 retries",
+        "status": "FAILED"
+      },
+      "payslip": {
+        "error": "payslip failed after 2 retries",
+        "status": "FAILED"
+      },
+      "bank": {
+        "error": "bank failed after 2 retries",
+        "status": "FAILED"
+      },
+      "credit": {
+        "error": "credit failed after 2 retries",
+        "status": "FAILED"
+      }
+    },
+    "processed_at": "2025-12-12T20:34:43.587764"
+  }
+}
